@@ -39,6 +39,8 @@ PHP 8, MySQL / MariaDB, AdminLTE 3 + Bootstrap (admin), HTML template + Bootstra
 5. Copy `admin/recovery_config.example.php` to `admin/recovery_config.php` and set your own long random key (used to reset the admin password).
 6. Open `http://localhost/pet-shop/` in your browser.
 
+To put it online for free, follow **[DEPLOY.md](DEPLOY.md)** (InfinityFree).
+
 You can also run it with PHP's built-in server: `php -S localhost:8081` from this folder (MySQL must be running).
 
 ## Logins
