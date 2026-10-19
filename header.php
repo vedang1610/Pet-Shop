@@ -1,6 +1,8 @@
 <script src="assets/js/theme.js"></script>
 <link rel="stylesheet" href="assets/css/dark-mode.css" />
 <script src="assets/js/image-knockout.js" defer></script>
+<link rel="stylesheet" href="assets/css/demo-notice.css" />
+<script src="assets/js/demo-notice.js" defer></script>
 <!-- Header Section Start From Here -->
 <header class="header-wrapper">
             <!-- Header Nav Start -->

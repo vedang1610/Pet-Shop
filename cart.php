@@ -468,7 +468,7 @@ if(isset($_GET['addProduct']) && isset($_GET['qty']))
                                                 Online
                                             </label>
 
-                                            <br>
+                                            <div class="demo-pay-note">Demo project: please don't make any real payment.</div>
                                             <br>
                                                <a href="javascript:void(0);" onclick="submitform()" id="buttonCheckout">Proceed to Checkout</a>
                                             <?php

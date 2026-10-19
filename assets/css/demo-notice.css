@@ -1,0 +1,52 @@
+/* demo-notice.css - "demo project, don't pay" popup and payment reminders. Light and dark (html[data-theme]). */
+
+.demo-notice-overlay {
+    position: fixed; inset: 0; z-index: 100000; display: grid; place-items: center; padding: 20px;
+    background: rgba(20, 14, 24, .6); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+    opacity: 0; transition: opacity .2s ease;
+}
+.demo-notice-overlay.open { opacity: 1; }
+.demo-notice-overlay.closing { opacity: 0; }
+.demo-notice {
+    width: 100%; max-width: 440px; text-align: center; padding: 32px 28px 26px; border-radius: 18px;
+    background: #ffffff; color: #4d4552; box-shadow: 0 24px 60px rgba(0, 0, 0, .3);
+    font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    transform: translateY(12px) scale(.97); transition: transform .25s ease;
+}
+.demo-notice-overlay.open .demo-notice { transform: none; }
+.demo-notice-icon {
+    width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%; display: grid; place-items: center;
+    background: #f2ab00; color: #403148; font-size: 34px; font-weight: 900; line-height: 1;
+    box-shadow: 0 0 0 8px rgba(242, 171, 0, .2);
+}
+.demo-notice h2 { margin: 0 0 12px; color: #403148; font-size: 24px; font-weight: 800; }
+.demo-notice p { margin: 0 0 10px; font-size: 15.5px; line-height: 1.55; color: #4d4552; }
+.demo-notice .demo-notice-warn { padding: 12px 14px; border-radius: 10px; background: rgba(229, 72, 77, .08); border: 1px solid rgba(229, 72, 77, .25); color: #a8262b; }
+.demo-notice .demo-notice-warn b { color: #c0262d; }
+.demo-notice .demo-notice-gu { font-size: 15px; font-weight: 700; color: #403148; }
+.demo-notice-btn {
+    margin-top: 8px; width: 100%; height: 50px; border: 0; border-radius: 30px; cursor: pointer;
+    background: #f2ab00; color: #403148; font: inherit; font-size: 16px; font-weight: 800; letter-spacing: .3px;
+    transition: background .2s, transform .15s;
+}
+.demo-notice-btn:hover { background: #403148; color: #fff; }
+.demo-notice-btn:focus-visible { outline: 3px solid #499f86; outline-offset: 3px; }
+
+:root[data-theme="dark"] .demo-notice { background: #211a27; color: #d9d1de; box-shadow: 0 24px 60px rgba(0, 0, 0, .6); }
+:root[data-theme="dark"] .demo-notice h2, :root[data-theme="dark"] .demo-notice .demo-notice-gu { color: #ffffff; }
+:root[data-theme="dark"] .demo-notice p { color: #d9d1de; }
+:root[data-theme="dark"] .demo-notice .demo-notice-warn { background: rgba(229, 72, 77, .14); color: #ffb0b3; }
+:root[data-theme="dark"] .demo-notice .demo-notice-warn b { color: #ff8a8e; }
+:root[data-theme="dark"] .demo-notice-btn:hover { background: #ffffff; color: #403148; }
+
+/* Small permanent reminder (cart payment options, payment page) */
+.demo-pay-note {
+    display: flex; gap: 8px; align-items: flex-start; margin: 10px 0; padding: 10px 12px; border-radius: 10px;
+    background: rgba(229, 72, 77, .08); border: 1px solid rgba(229, 72, 77, .25); color: #a8262b; font-size: 13.5px; font-weight: 700; line-height: 1.45;
+}
+.demo-pay-note::before { content: "!"; flex: none; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: #e5484d; color: #fff; font-size: 13px; font-weight: 900; }
+:root[data-theme="dark"] .demo-pay-note { background: rgba(229, 72, 77, .14); color: #ffb0b3; }
+
+@media (prefers-reduced-motion: reduce) {
+    .demo-notice-overlay, .demo-notice { transition: none; }
+}

@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="dist/css/auth.css">
+  <link rel="stylesheet" href="../assets/css/demo-notice.css">
+  <script src="../assets/js/demo-notice.js" defer></script>
   <script src="../assets/js/theme.js"></script>
 </head>
 <body class="auth-page">
