@@ -1,0 +1,44 @@
+/* admin-dark.css - theme toggle for the admin panel, plus dark styles AdminLTE's own .dark-mode doesn't cover */
+
+/* Toggle icon: moon in light mode, sun in dark mode */
+.theme-nav-toggle { font-size: 1.1rem; }
+.theme-nav-toggle .fa-sun { display: none; color: #f2ab00; }
+:root[data-theme="dark"] .theme-nav-toggle .fa-sun { display: inline-block; }
+:root[data-theme="dark"] .theme-nav-toggle .fa-moon { display: none; }
+
+:root[data-theme="dark"] body { background-color: #454d55; color: #fff; }
+:root[data-theme="dark"] .main-header { background-color: #343a40; border-bottom-color: #4b545c; }
+
+/* Tables and DataTables */
+:root[data-theme="dark"] .table { color: #e9ecef; }
+:root[data-theme="dark"] .table td, :root[data-theme="dark"] .table th { border-color: #56606a; }
+:root[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) { background-color: rgba(255, 255, 255, .04); }
+:root[data-theme="dark"] .dataTables_wrapper, :root[data-theme="dark"] .dataTables_info { color: #ced4da; }
+:root[data-theme="dark"] .page-link { background-color: #343a40; border-color: #56606a; color: #e9ecef; }
+:root[data-theme="dark"] .page-item.active .page-link { background-color: #007bff; border-color: #007bff; color: #fff; }
+:root[data-theme="dark"] .page-item.disabled .page-link { background-color: #3a4047; color: #8a939b; }
+
+/* Forms */
+:root[data-theme="dark"] .form-control, :root[data-theme="dark"] .custom-select {
+    background-color: #343a40; color: #fff; border-color: #6c757d;
+}
+:root[data-theme="dark"] .form-control:focus { background-color: #3a4047; color: #fff; }
+:root[data-theme="dark"] .form-control::placeholder { color: #8a939b; }
+:root[data-theme="dark"] .form-control:disabled, :root[data-theme="dark"] .form-control[readonly] { background-color: #3f474e; }
+:root[data-theme="dark"] select.form-control option { background-color: #343a40; color: #fff; }
+:root[data-theme="dark"] label { color: #e9ecef; }
+
+/* Text that AdminLTE leaves dark */
+:root[data-theme="dark"] .text-dark { color: #e9ecef !important; }
+:root[data-theme="dark"] .text-muted { color: #adb5bd !important; }
+:root[data-theme="dark"] .content-header h1, :root[data-theme="dark"] .card-title { color: #fff; }
+:root[data-theme="dark"] .breadcrumb-item a { color: #8ec5ff; }
+:root[data-theme="dark"] .modal-content { background-color: #343a40; color: #fff; }
+:root[data-theme="dark"] .modal-header, :root[data-theme="dark"] .modal-footer { border-color: #4b545c; }
+
+/* SweetAlert popups */
+:root[data-theme="dark"] .swal-modal { background-color: #343a40; }
+:root[data-theme="dark"] .swal-title { color: #fff; }
+:root[data-theme="dark"] .swal-text { color: #ced4da; }
+:root[data-theme="dark"] .swal-icon--success::before, :root[data-theme="dark"] .swal-icon--success::after,
+:root[data-theme="dark"] .swal-icon--success__hide-corners { background: #343a40; }

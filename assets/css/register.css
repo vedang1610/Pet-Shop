@@ -1,0 +1,136 @@
+/* register.css - Register page layout, in the site's existing colours (gold #f2ab00, green #499f86, purple #403148) */
+
+.reg-area { background: #f7f5f8; padding: 50px 0 90px; }
+.reg-card {
+    display: flex; background: #fff; border-radius: 16px; overflow: hidden;
+    box-shadow: 0 12px 40px rgba(64, 49, 72, .12); max-width: 1080px; margin: 0 auto;
+}
+
+/* Left panel */
+.reg-side {
+    flex: 0 0 40%; position: relative; color: #fff; padding: 44px 40px;
+    display: flex; flex-direction: column; justify-content: flex-end; min-height: 560px;
+    background: #403148 url("../images/slider-image/sample-6.jpg") 70% center / cover no-repeat;
+}
+.reg-side::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(64, 49, 72, .15) 0%, rgba(64, 49, 72, .92) 72%);
+}
+.reg-side > * { position: relative; }
+.reg-side .reg-badge {
+    display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+    background: #f2ab00; color: #fff; font-weight: 700; font-size: 13px;
+    padding: 6px 14px; border-radius: 30px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: .5px;
+}
+.reg-side h2 { color: #fff; font-size: 30px; font-weight: 800; line-height: 1.25; margin: 0 0 10px; }
+.reg-side p { color: #e9e3ee; font-size: 15px; margin: 0 0 20px; }
+.reg-side ul { list-style: none; padding: 0; margin: 0; }
+.reg-side li { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; padding: 5px 0; }
+.reg-side li i { color: #f2ab00; font-size: 20px; }
+
+/* Form panel */
+.reg-form { flex: 1; padding: 44px 48px; }
+.reg-form h1 { font-size: 30px; font-weight: 800; color: #403148; margin: 0 0 6px; }
+.reg-form .reg-sub { color: #777; font-size: 15px; margin: 0 0 28px; }
+.reg-form .reg-sub a { color: #499f86; font-weight: 700; }
+.reg-form .reg-sub a:hover { color: #f2ab00; }
+
+.reg-form .form-group { margin-bottom: 18px; }
+.reg-form label { display: block; font-weight: 700; font-size: 14px; color: #403148; margin-bottom: 7px; }
+.reg-form label .req { color: #ea1b25; }
+.reg-input { position: relative; }
+.reg-input > i {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 20px; color: #a99fb0; pointer-events: none; transition: color .2s;
+}
+.reg-input.reg-textarea > i { top: 14px; transform: none; }
+.reg-form .form-control {
+    height: 48px; border: 1px solid #e5e5e5; border-radius: 8px; background: #fafafa;
+    padding: 10px 14px 10px 44px; font-size: 15px; color: #1d1d1d; box-shadow: none;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.reg-form textarea.form-control { height: 96px; resize: vertical; padding-top: 12px; }
+.reg-form .form-control:focus { border-color: #499f86; background: #fff; box-shadow: 0 0 0 3px rgba(73, 159, 134, .15); }
+.reg-input:focus-within > i { color: #499f86; }
+.reg-form .form-control::placeholder { color: #aaa; }
+
+/* File picker */
+.reg-form input[type=file].form-control { padding: 9px 12px; height: auto; background: #fff; border-style: dashed; }
+.reg-form input[type=file]::file-selector-button {
+    border: 0; background: #403148; color: #fff; padding: 7px 16px; border-radius: 6px;
+    font-weight: 700; margin-right: 12px; cursor: pointer; transition: background .2s;
+}
+.reg-form input[type=file]::file-selector-button:hover { background: #499f86; }
+.reg-hint { display: block; font-size: 12.5px; color: #999; margin-top: 6px; }
+
+/* Validation messages from jquery-form-validator */
+.reg-form .has-error .form-control { border-color: #ea1b25; }
+.reg-form .help-block.form-error { color: #ea1b25; font-size: 13px; font-weight: 600; margin-top: 5px; display: block; }
+.reg-form .has-success .form-control { border-color: #499f86; }
+
+/* Buttons */
+.reg-actions { display: flex; gap: 14px; margin-top: 10px; }
+.reg-btn {
+    flex: 1; height: 50px; border-radius: 30px; font-weight: 800; font-size: 15px; text-transform: uppercase;
+    letter-spacing: .5px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    border: 2px solid transparent; cursor: pointer; transition: all .25s; text-decoration: none;
+}
+.reg-btn-primary { background: #f2ab00; color: #fff; }
+.reg-btn-primary:hover { background: #403148; color: #fff; }
+.reg-btn-outline { background: #fff; color: #403148; border-color: #e5e5e5; }
+.reg-btn-outline:hover { border-color: #403148; color: #403148; }
+
+@media (max-width: 991px) {
+    .reg-card { flex-direction: column; }
+    .reg-side { min-height: 280px; flex-basis: auto; padding: 32px; }
+    .reg-form { padding: 32px; }
+}
+@media (max-width: 575px) {
+    .reg-area { padding: 24px 0 60px; }
+    .reg-side h2 { font-size: 24px; }
+    .reg-form { padding: 26px 20px; }
+    .reg-form h1 { font-size: 25px; }
+    .reg-actions { flex-direction: column-reverse; }
+}
+
+/* ---------- Login panel (left side of the card) ---------- */
+.reg-side.reg-login { justify-content: center; }
+.reg-side.reg-login::before { background: linear-gradient(160deg, rgba(64, 49, 72, .88) 0%, rgba(64, 49, 72, .82) 45%, rgba(43, 33, 49, .95) 100%); }
+.reg-login h2 { font-size: 32px; margin-bottom: 6px; }
+.reg-login > p { margin-bottom: 22px; }
+.reg-login .form-group { margin-bottom: 16px; }
+.reg-login label { display: block; color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 7px; }
+.reg-login .reg-input > i { color: rgba(255, 255, 255, .6); }
+.reg-login .form-control {
+    height: 48px; border-radius: 8px; padding: 10px 44px 10px 44px; font-size: 15px;
+    background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .22); color: #fff; box-shadow: none;
+}
+.reg-login .form-control::placeholder { color: rgba(255, 255, 255, .55); }
+.reg-login .form-control:focus { background: rgba(255, 255, 255, .16); border-color: #f2ab00; box-shadow: 0 0 0 3px rgba(242, 171, 0, .25); color: #fff; }
+.reg-login .reg-input:focus-within > i { color: #f2ab00; }
+.reg-login .form-control:-webkit-autofill { -webkit-text-fill-color: #fff; -webkit-box-shadow: 0 0 0 40px #4a3a55 inset; }
+.reg-eye {
+    position: absolute; right: 6px; top: 6px; width: 36px; height: 36px; border: 0; border-radius: 8px;
+    background: transparent; color: rgba(255, 255, 255, .7); font-size: 19px; cursor: pointer;
+}
+.reg-eye:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+.reg-login .help-block.form-error { color: #ffb4b4; font-size: 13px; font-weight: 600; margin-top: 5px; display: block; }
+.reg-login .has-error .form-control { border-color: #ff8a8a; }
+.reg-btn-full { width: 100%; flex: none; margin-top: 6px; }
+.reg-login .reg-btn-primary:hover { background: #fff; color: #403148; }
+.reg-or { display: flex; align-items: center; gap: 12px; margin: 26px 0 10px; color: rgba(255, 255, 255, .6); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+.reg-or::before, .reg-or::after { content: ""; flex: 1; height: 1px; background: rgba(255, 255, 255, .2); }
+.reg-login .reg-login-note { margin: 0; color: #e9e3ee; font-size: 14px; font-weight: 600; display: flex; align-items: flex-start; gap: 8px; }
+.reg-login .reg-login-note i { margin-top: 3px; flex: none; }
+.reg-login .reg-login-note i { color: #f2ab00; }
+
+@media (max-width: 991px) {
+    .reg-side.reg-login { min-height: 0; padding: 32px; }
+    .reg-login .reg-login-note .las { transform: rotate(90deg); }
+}
+
+/* Forgot password link next to the login Password label */
+.reg-label-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 7px; }
+.reg-login .reg-label-row label { margin-bottom: 0; }
+.reg-forgot { color: #f2ab00; font-size: 13px; font-weight: 700; }
+.reg-forgot:hover { color: #fff; text-decoration: underline; }

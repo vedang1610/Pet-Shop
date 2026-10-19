@@ -1,0 +1,224 @@
+/* dark-mode.css - dark theme for the shop pages (old template). Switched on by <html data-theme="dark">, see assets/js/theme.js.
+   Keeps the template's own colours: gold #f2ab00, green #499f86, purple #403148. */
+
+/* ---------- Toggle button (header) ---------- */
+.theme-switch {
+    width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; align-self: center;
+    border: 1px solid rgba(255, 255, 255, .35); background: transparent; color: #f2ab00;
+    font-size: 22px; line-height: 1; display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background .2s, transform .2s;
+}
+.theme-switch:hover { background: rgba(255, 255, 255, .12); transform: rotate(-15deg); }
+.theme-switch:focus-visible { outline: 2px solid #f2ab00; outline-offset: 2px; }
+.theme-switch .la-sun { display: none; }
+:root[data-theme="dark"] .theme-switch .la-sun { display: inline-block; }
+:root[data-theme="dark"] .theme-switch .la-moon { display: none; }
+.mobile-header .theme-switch { width: 36px; height: 36px; font-size: 20px; margin: 0 10px 0 0; }
+
+/* ---------- Dark palette ---------- */
+:root[data-theme="dark"] {
+    --dm-bg: #17121b;
+    --dm-surface: #211a27;
+    --dm-surface-2: #2a2231;
+    --dm-line: #3a3142;
+    --dm-text: #e6e0ea;
+    --dm-muted: #a99fb0;
+    --dm-heading: #ffffff;
+    color-scheme: dark;
+}
+
+:root[data-theme="dark"] body { background-color: var(--dm-bg); color: var(--dm-text); }
+:root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3,
+:root[data-theme="dark"] h4, :root[data-theme="dark"] h5, :root[data-theme="dark"] h6 { color: var(--dm-heading); }
+:root[data-theme="dark"] p { color: var(--dm-text); }
+:root[data-theme="dark"] .bg-white { background-color: var(--dm-surface) !important; }
+:root[data-theme="dark"] .bg-light-gray-3 { background-color: var(--dm-surface) !important; }
+
+/* ---------- Header ---------- */
+:root[data-theme="dark"] .header-nav { background-color: var(--dm-surface) !important; border-bottom: 1px solid var(--dm-line); }
+:root[data-theme="dark"] .header-nav a, :root[data-theme="dark"] .header-nav button { color: var(--dm-text); }
+:root[data-theme="dark"] .header-menu.bg-indigo, :root[data-theme="dark"] .mobile-header.bg-indigo { background-color: #2b2131 !important; }
+:root[data-theme="dark"] .dropdown-menu { background-color: var(--dm-surface-2); border-color: var(--dm-line); }
+:root[data-theme="dark"] .dropdown-menu li a, :root[data-theme="dark"] .dropdown-menu a { color: var(--dm-text); }
+:root[data-theme="dark"] .dropdown-menu li a:hover { color: #f2ab00; background: transparent; }
+
+/* Mobile off-canvas menu */
+:root[data-theme="dark"] .offcanvas, :root[data-theme="dark"] .offcanvas .inner { background-color: var(--dm-surface); color: var(--dm-text); }
+:root[data-theme="dark"] .offcanvas a, :root[data-theme="dark"] .offcanvas .title,
+:root[data-theme="dark"] .offcanvas .offcanvas-close { color: var(--dm-text); }
+:root[data-theme="dark"] .offcanvas-menu ul li a { border-color: var(--dm-line); }
+
+/* ---------- Sections ---------- */
+:root[data-theme="dark"] .breadcrumb-area { background-color: var(--dm-bg); }
+:root[data-theme="dark"] .breadcrumb-content ul li, :root[data-theme="dark"] .breadcrumb-content ul li a { color: var(--dm-muted); }
+:root[data-theme="dark"] .breadcrumb-content ul li:last-child { color: #f2ab00; }
+
+:root[data-theme="dark"] .category-tab-slider-area,
+:root[data-theme="dark"] .testimonial-area,
+:root[data-theme="dark"] .brand-area,
+:root[data-theme="dark"] .shop-category-area,
+:root[data-theme="dark"] .product-details-area,
+:root[data-theme="dark"] .cart-main-area,
+:root[data-theme="dark"] .login-register-area { background-color: var(--dm-bg); }
+:root[data-theme="dark"] .section-title h2, :root[data-theme="dark"] .testi-title h2 { color: var(--dm-heading); }
+
+/* Category tabs on home */
+:root[data-theme="dark"] .tab-heading li a, :root[data-theme="dark"] .tabs-categorys li a { background-color: var(--dm-surface); color: var(--dm-text); border-color: var(--dm-line); }
+:root[data-theme="dark"] .tabs-categorys li a .pat-name { color: var(--dm-text); }
+
+/* Testimonials */
+:root[data-theme="dark"] .testimonial-slider-item, :root[data-theme="dark"] .content_author { background-color: transparent; }
+:root[data-theme="dark"] .des_testimonial { color: var(--dm-text); }
+:root[data-theme="dark"] .des_namepost, :root[data-theme="dark"] .des_namepost span { color: var(--dm-heading); }
+:root[data-theme="dark"] .des_email { color: var(--dm-muted); }
+
+/* Newsletter */
+:root[data-theme="dark"] .subscribe-form input { background-color: var(--dm-surface); color: var(--dm-text); border-color: var(--dm-line); }
+
+/* Brand logos: soften the white boxes */
+:root[data-theme="dark"] .brand-slider-item img { filter: brightness(.82); border-radius: 8px; }
+:root[data-theme="dark"] .brand-slider-item a:hover img { filter: none; }
+
+/* ---------- Products ---------- */
+:root[data-theme="dark"] .list-product, :root[data-theme="dark"] .product-inner { background-color: var(--dm-surface); }
+:root[data-theme="dark"] .list-product { border-radius: 10px; }
+:root[data-theme="dark"] .product-decs h2 a, :root[data-theme="dark"] .product-link { color: var(--dm-heading); }
+:root[data-theme="dark"] .product-decs h2 a:hover { color: #f2ab00; }
+:root[data-theme="dark"] .pricing-meta ul li, :root[data-theme="dark"] .current-price { color: #f2ab00; }
+
+/* Shop sidebar */
+:root[data-theme="dark"] .shop-sidebar-wrap .sidebar-widget, :root[data-theme="dark"] .header-menu-vertical { background-color: var(--dm-surface) !important; border-color: var(--dm-line); }
+:root[data-theme="dark"] .header-menu-vertical .menu-content .menu-item a { color: var(--dm-text); border-color: var(--dm-line); }
+:root[data-theme="dark"] .header-menu-vertical .menu-content .menu-item a:hover { color: #f2ab00; }
+
+/* Product details */
+:root[data-theme="dark"] .product-details-content h2 { color: var(--dm-heading); }
+:root[data-theme="dark"] .pro-details-policy ul li span { color: var(--dm-text); }
+:root[data-theme="dark"] .pro-details-policy ul li img { filter: invert(1) brightness(1.4); }
+:root[data-theme="dark"] .description-review-topbar a { color: var(--dm-text); }
+:root[data-theme="dark"] .description-review-topbar a.active { color: #f2ab00; }
+:root[data-theme="dark"] .description-review-bottom, :root[data-theme="dark"] .product-description-wrapper p { color: var(--dm-text); background: transparent; }
+:root[data-theme="dark"] .zoompro-border img, :root[data-theme="dark"] .product-dec-slider-2 img { background-color: #fff; border-radius: 6px; }
+
+/* ---------- Forms ---------- */
+:root[data-theme="dark"] .form-control, :root[data-theme="dark"] textarea, :root[data-theme="dark"] select,
+:root[data-theme="dark"] input[type="text"], :root[data-theme="dark"] input[type="email"],
+:root[data-theme="dark"] input[type="number"], :root[data-theme="dark"] input[type="password"] {
+    background-color: var(--dm-surface-2); color: var(--dm-text); border-color: var(--dm-line);
+}
+:root[data-theme="dark"] .form-control:focus { background-color: var(--dm-surface-2); color: var(--dm-text); border-color: #499f86; box-shadow: 0 0 0 3px rgba(73, 159, 134, .2); }
+:root[data-theme="dark"] ::placeholder { color: #7d7285 !important; }
+:root[data-theme="dark"] label { color: var(--dm-text); }
+
+/* ---------- Cart ---------- */
+:root[data-theme="dark"] .cart-page-title { color: var(--dm-heading); }
+:root[data-theme="dark"] .cart-table-content table { background-color: var(--dm-surface); border-color: var(--dm-line); }
+:root[data-theme="dark"] .cart-table-content table thead > tr { background-color: var(--dm-surface-2); border-color: var(--dm-line); }
+:root[data-theme="dark"] .cart-table-content table thead > tr th { color: var(--dm-heading); }
+:root[data-theme="dark"] .cart-table-content table tbody > tr { border-color: var(--dm-line); }
+:root[data-theme="dark"] .cart-table-content table tbody > tr td { color: var(--dm-text); border-color: var(--dm-line); }
+:root[data-theme="dark"] .cart-table-content table tbody > tr td.product-remove button { color: var(--dm-text); background: transparent; }
+:root[data-theme="dark"] .cart-shiping-update-wrapper .cart-shiping-update > a,
+:root[data-theme="dark"] .cart-shiping-update-wrapper .cart-clear > button { background-color: var(--dm-surface-2); color: var(--dm-text); }
+:root[data-theme="dark"] .cart-shiping-update-wrapper .cart-shiping-update > a:hover,
+:root[data-theme="dark"] .cart-shiping-update-wrapper .cart-clear > button:hover { background-color: #f2ab00; color: #fff; }
+:root[data-theme="dark"] .discount-code-wrapper, :root[data-theme="dark"] .grand-totall { background-color: var(--dm-surface); border-color: var(--dm-line); }
+:root[data-theme="dark"] .cart-bottom-title, :root[data-theme="dark"] .section-bg-gray, :root[data-theme="dark"] .section-bg-gary-cart { background-color: var(--dm-surface-2) !important; color: var(--dm-heading); }
+:root[data-theme="dark"] .grand-totall h5, :root[data-theme="dark"] .grand-totall h4, :root[data-theme="dark"] .grand-totall span,
+:root[data-theme="dark"] .grand-totall .total-shipping ul li, :root[data-theme="dark"] .discount-code p { color: var(--dm-text); }
+:root[data-theme="dark"] .grand-totall .total-shipping { border-color: var(--dm-line); }
+
+/* ---------- Register page (assets/css/register.css) ---------- */
+:root[data-theme="dark"] .reg-area { background: var(--dm-bg); }
+:root[data-theme="dark"] .reg-card { background: var(--dm-surface); box-shadow: 0 12px 40px rgba(0, 0, 0, .45); }
+:root[data-theme="dark"] .reg-form h1, :root[data-theme="dark"] .reg-form label { color: var(--dm-heading); }
+:root[data-theme="dark"] .reg-form .reg-sub, :root[data-theme="dark"] .reg-hint { color: var(--dm-muted); }
+:root[data-theme="dark"] .reg-form .form-control { background: var(--dm-surface-2); border-color: var(--dm-line); color: var(--dm-text); }
+:root[data-theme="dark"] .reg-form .form-control:focus { background: #30273a; }
+:root[data-theme="dark"] .reg-form input[type=file].form-control { background: var(--dm-surface-2); }
+:root[data-theme="dark"] .reg-input > i { color: #85798d; }
+:root[data-theme="dark"] .reg-btn-outline { background: transparent; color: var(--dm-text); border-color: var(--dm-line); }
+:root[data-theme="dark"] .reg-btn-outline:hover { border-color: var(--dm-text); color: var(--dm-heading); }
+:root[data-theme="dark"] .reg-btn-primary:hover { background: #ffffff; color: #403148; }
+
+/* ---------- Footer & misc ---------- */
+:root[data-theme="dark"] .footer-area, :root[data-theme="dark"] .footer-top { background-color: #120e15; }
+:root[data-theme="dark"] .footer-bottom { background-color: #0d0a10; border-color: var(--dm-line); }
+:root[data-theme="dark"] .modal-content { background-color: var(--dm-surface); color: var(--dm-text); }
+
+/* SweetAlert popups */
+:root[data-theme="dark"] .swal-modal { background-color: var(--dm-surface); }
+:root[data-theme="dark"] .swal-title { color: var(--dm-heading); }
+:root[data-theme="dark"] .swal-text { color: var(--dm-muted); }
+:root[data-theme="dark"] .swal-icon--success::before, :root[data-theme="dark"] .swal-icon--success::after,
+:root[data-theme="dark"] .swal-icon--success__hide-corners { background: var(--dm-surface); }
+
+/* ---------- Fixes found while scanning pages in dark mode ---------- */
+:root[data-theme="dark"] .product-decs, :root[data-theme="dark"] .shop-top-bar,
+:root[data-theme="dark"] .description-review-topbar { background-color: var(--dm-surface) !important; border-color: var(--dm-line); }
+:root[data-theme="dark"] .cart-btn .add-to-curt { background-color: var(--dm-surface-2); color: #f2ab00; border-color: var(--dm-line); }
+:root[data-theme="dark"] .cart-btn .add-to-curt:hover { background-color: #f2ab00; color: #fff; }
+:root[data-theme="dark"] .pricing-meta ul li.current-price, :root[data-theme="dark"] .pricing-meta ul li.cuttent-price { color: #f2ab00; }
+/* Paw icon under section titles sits on a box that hides the dotted line */
+:root[data-theme="dark"] .section-title:before, :root[data-theme="dark"] .testi-title:before { background-color: var(--dm-bg); }
+:root[data-theme="dark"] .header-menu-vertical .menu-content { background-color: var(--dm-surface); border-color: var(--dm-line); }
+:root[data-theme="dark"] .header-menu-vertical .menu-content .menu-item a, :root[data-theme="dark"] .header-menu-vertical .menu-content .menu-item a i { color: var(--dm-text); opacity: 1; }
+:root[data-theme="dark"] .title-wrap .cart-bottom-title, :root[data-theme="dark"] .cart-bottom-title.section-bg-gray,
+:root[data-theme="dark"] .cart-bottom-title.section-bg-gary-cart { color: var(--dm-heading) !important; background-color: var(--dm-surface) !important; }
+
+/* ---------- Images & background images ----------
+   Light mode shows images as they are. Dark mode dims bright photos so they don't glare,
+   and brings them back to full brightness on hover. */
+.single-slide.bg-img, .category-banner, .banner-wrapper img, .subscribe-wrapper,
+.img-block img, .zoompro, .product-dec-slider-2 img, .img-thumb img,
+.product-thumbnail img, .img_author img, .reg-side, .brand-slider-item img {
+    transition: filter .35s ease, opacity .35s ease;
+}
+
+/* Hero slider + page banners (background images) */
+:root[data-theme="dark"] .single-slide.bg-img { filter: brightness(.72) contrast(1.08) saturate(1.05); }
+:root[data-theme="dark"] .category-banner { filter: brightness(.7); }
+:root[data-theme="dark"] .slider-area { background-color: var(--dm-bg); }
+
+/* Promo banners */
+:root[data-theme="dark"] .banner-wrapper img { filter: brightness(.8) contrast(1.05); }
+:root[data-theme="dark"] .banner-wrapper a:hover img { filter: none; }
+
+/* Product photos: assets/js/image-knockout.js removes the white background around them (.is-knocked-out),
+   so they sit on the card colour in both themes. Photos it can't process keep a soft tile and a light dim. */
+.img-block, .zoompro-border, .product-dec-slider-2 .single-slide-item { transition: background-color .3s; }
+:root[data-theme="dark"] .img-block, :root[data-theme="dark"] .zoompro-border,
+:root[data-theme="dark"] .product-dec-slider-2 .single-slide-item { background-color: #e9e4ec; border-radius: 8px; overflow: hidden; }
+:root[data-theme="dark"] .img-block:has(img.is-knocked-out),
+:root[data-theme="dark"] .zoompro-border:has(img.is-knocked-out),
+:root[data-theme="dark"] .product-dec-slider-2 .single-slide-item:has(img.is-knocked-out) { background-color: transparent; }
+:root[data-theme="dark"] .img-block img:not(.is-knocked-out), :root[data-theme="dark"] .zoompro:not(.is-knocked-out),
+:root[data-theme="dark"] .product-dec-slider-2 img:not(.is-knocked-out),
+:root[data-theme="dark"] .product-thumbnail img:not(.is-knocked-out) { filter: brightness(.88); }
+:root[data-theme="dark"] img.is-knocked-out { background-color: transparent !important; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .35)); }
+:root[data-theme="dark"] .list-product:hover .img-block img:not(.is-knocked-out),
+:root[data-theme="dark"] .zoompro-border:hover .zoompro:not(.is-knocked-out) { filter: none; }
+/* zoom lens/gallery borders from the template */
+:root[data-theme="dark"] .zoompro-border, :root[data-theme="dark"] .product-dec-slider-2 .single-slide-item { border-color: var(--dm-line) !important; }
+
+/* Category circles and small avatars */
+:root[data-theme="dark"] .img-thumb img:not(.is-knocked-out) { filter: brightness(.9); }
+:root[data-theme="dark"] .tabs-categorys li a:hover .img-thumb img { filter: none; }
+:root[data-theme="dark"] .img_author img { filter: brightness(.9); }
+
+/* Register page photo panel */
+:root[data-theme="dark"] .reg-side { filter: brightness(.9); }
+
+/* Newsletter background (replaces the earlier blanket dim) */
+:root[data-theme="dark"] .subscribe-wrapper { filter: none; }
+:root[data-theme="dark"] .subscribe-inner { position: relative; isolation: isolate; }
+:root[data-theme="dark"] .subscribe-inner::before { content: ""; position: absolute; inset: 0; background: rgba(23, 18, 27, .45); z-index: -1; border-radius: inherit; pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .single-slide.bg-img, .banner-wrapper img, .img-block img, .zoompro { transition: none; }
+}
+:root[data-theme="dark"] .subscribe-form .mc-form input.email { background-color: var(--dm-surface) !important; color: var(--dm-text); }
+/* Category circles: the icons are transparent PNGs on a white circle - use the card colour in dark mode */
+.img-thumb img { transition: background-color .3s; }
+:root[data-theme="dark"] .category-tab-slider-area .box-tab li a span img,
+:root[data-theme="dark"] .category-tab-slider-area .box-tab li a.active span img { background-color: var(--dm-surface-2); }

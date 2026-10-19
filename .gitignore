@@ -1,0 +1,42 @@
+# ---- Secrets: never commit these ----
+admin/mail.php
+admin/recovery_config.php
+
+# ---- Real customer data ----
+# Full database dump with customers and orders (database/pet_shop.sql is the clean copy)
+database/nsp_pet.sql
+# Uploads: customer ID proofs live here too, so only product/category images are allowed below
+admin/upload_images/*
+!admin/upload_images/1642526823_61e6f86750f5a.jpg
+!admin/upload_images/1642527228.jpg
+!admin/upload_images/1642608871.jpg
+!admin/upload_images/1643295175.png
+!admin/upload_images/demo_cat_cats.png
+!admin/upload_images/demo_cat_dogs.png
+!admin/upload_images/demo_cat_fish.png
+!admin/upload_images/demo_p1.jpg
+!admin/upload_images/demo_p10.jpg
+!admin/upload_images/demo_p11.jpg
+!admin/upload_images/demo_p12.jpg
+!admin/upload_images/demo_p13.jpg
+!admin/upload_images/demo_p14.jpg
+!admin/upload_images/demo_p15.jpg
+!admin/upload_images/demo_p16.jpg
+!admin/upload_images/demo_p2.jpg
+!admin/upload_images/demo_p3.jpg
+!admin/upload_images/demo_p4.jpg
+!admin/upload_images/demo_p5.jpg
+!admin/upload_images/demo_p6.jpg
+!admin/upload_images/demo_p7.jpg
+!admin/upload_images/demo_p8.jpg
+!admin/upload_images/demo_p9.jpg
+
+# ---- Local backups and tools ----
+_backup_before_redesign/
+.claude/
+
+# ---- OS / editor files ----
+Thumbs.db
+.DS_Store
+desktop.ini
+*.log
