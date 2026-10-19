@@ -1,6 +1,7 @@
 # ---- Secrets: never commit these ----
 admin/mail.php
 admin/recovery_config.php
+admin/db_config.php
 
 # ---- Real customer data ----
 # Full database dump with customers and orders (database/pet_shop.sql is the clean copy)

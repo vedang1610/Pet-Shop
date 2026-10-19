@@ -45,7 +45,7 @@ if(isset($_GET['InvoiceId']))
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Invoice</title>
 
   <!-- Google Font: Source Sans Pro -->

@@ -51,7 +51,7 @@ if(isset($_GET['user_id']) && isset($_GET['booking_id']))
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Invoice | OGBS</title>
 
   <!-- Google Font: Source Sans Pro -->

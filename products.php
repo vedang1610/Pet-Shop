@@ -15,7 +15,7 @@ include('admin/functions.php');
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <title>Pet Shop</title>
         <meta name="description" content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world."/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="profile" href="https://gmpg.org/xfn/11">
         <link rel="canonical" href="Replace_with_your_PAGE_URL.html" />
 
@@ -119,6 +119,24 @@ include('admin/functions.php');
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 order-lg-last col-md-12 order-md-first">
+                    <!-- Categories as scrollable chips on phones/tablets (the sidebar is hidden there) -->
+                    <div class="m-cat-chips d-lg-none" role="navigation" aria-label="Categories">
+                        <a href="products.php" class="<?php echo isset($_GET['categoryId']) ? '' : 'active'; ?>">All</a>
+                        <?php
+                        $chipCategories = selectData("SELECT * FROM `category` order by id desc");
+                        if(is_array($chipCategories))
+                        {
+                            foreach ($chipCategories as $chip)
+                            {
+                                ?>
+                                <a href="products.php?categoryId=<?php echo $chip['id']; ?>" class="<?php echo (isset($_GET['categoryId']) && $_GET['categoryId'] == $chip['id']) ? 'active' : ''; ?>">
+                                    <img src="admin/upload_images/<?php echo $chip['image']; ?>" alt=""><?php echo htmlspecialchars($chip['name']); ?>
+                                </a>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </div>
                     <!-- Shop Top Area Start -->
                     <div class="shop-top-bar">
                         <div class="row align-items-center">

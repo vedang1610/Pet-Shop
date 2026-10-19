@@ -15,7 +15,7 @@ include('admin/functions.php');
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <title>Pet Shop</title>
         <meta name="description" content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world."/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="profile" href="https://gmpg.org/xfn/11">
         <link rel="canonical" href="Replace_with_your_PAGE_URL.html" />
 

@@ -3,6 +3,34 @@
 <script src="assets/js/image-knockout.js" defer></script>
 <link rel="stylesheet" href="assets/css/demo-notice.css" />
 <script src="assets/js/demo-notice.js" defer></script>
+<link rel="stylesheet" href="assets/css/responsive.css" />
+<?php
+// App-style bottom navigation for phones/tablets (like the Flipkart app)
+$navPage = basename($_SERVER['PHP_SELF']);
+$navCartCount = 0;
+if (isset($con) && isset($_SESSION['userId'])) {
+    $navUser = (int)$_SESSION['userId'];
+    $navResult = mysqli_query($con, "SELECT COALESCE(SUM(qty), 0) FROM `cart` WHERE user_id = $navUser");
+    if ($navResult) { $navCartCount = (int)mysqli_fetch_row($navResult)[0]; }
+}
+// Product and cart pages have their own bottom action bar instead
+$navHidden = in_array($navPage, array('productDetails.php', 'cart.php'), true);
+?>
+<?php if (!$navHidden) { ?>
+<nav class="m-bottom-nav d-lg-none" aria-label="Main">
+    <a href="index.php" class="<?php echo $navPage === 'index.php' ? 'active' : ''; ?>"><i class="las la-home"></i><span>Home</span></a>
+    <a href="products.php" class="<?php echo $navPage === 'products.php' ? 'active' : ''; ?>"><i class="las la-th-large"></i><span>Shop</span></a>
+    <a href="cart.php" class="<?php echo $navPage === 'cart.php' ? 'active' : ''; ?>">
+        <i class="las la-shopping-cart"></i><span>Cart</span>
+        <?php if ($navCartCount > 0) { ?><em class="m-badge"><?php echo $navCartCount > 99 ? '99+' : $navCartCount; ?></em><?php } ?>
+    </a>
+    <?php if (isset($_SESSION['userId'])) { ?>
+        <a href="admin/userDashboard.php"><i class="las la-user-circle"></i><span>Account</span></a>
+    <?php } else { ?>
+        <a href="register.php" class="<?php echo $navPage === 'register.php' ? 'active' : ''; ?>"><i class="las la-user-circle"></i><span>Login</span></a>
+    <?php } ?>
+</nav>
+<?php } ?>
 <!-- Header Section Start From Here -->
 <header class="header-wrapper">
             <!-- Header Nav Start -->

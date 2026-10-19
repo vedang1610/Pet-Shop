@@ -25,7 +25,7 @@ if(isset($_GET['getData']))
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<title>Admin Dashboard</title>
 
 	<!-- Google Font: Source Sans Pro -->

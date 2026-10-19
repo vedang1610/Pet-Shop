@@ -53,7 +53,7 @@ if(isset($_GET['addProduct']) && isset($_GET['qty']))
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <title>Pet Shop</title>
         <meta name="description" content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world."/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="profile" href="https://gmpg.org/xfn/11">
         <link rel="canonical" href="Replace_with_your_PAGE_URL.html" />
 
@@ -190,7 +190,7 @@ if(isset($_GET['addProduct']) && isset($_GET['qty']))
                                                     <input type="hidden" name="productPrice[]" value="<?php echo $row['price']; ?>" />
                                                     <span class="amount">Rs. <?php echo $row['price']; ?></span>
                                                 </td>
-                                                <td class="">
+                                                <td class="product-qty">
                                                     <div class="">
                                                         <input type="hidden" name="productId[]" value="<?php echo $row['id']; ?>" />
                                                         <input type="hidden" name="cartId[]" value="<?php echo $row['cartId']; ?>" />
@@ -479,6 +479,16 @@ if(isset($_GET['addProduct']) && isset($_GET['qty']))
                             </div>
                         </form>
                         <form id="removeAddressForm" method="post" hidden><input type="hidden" name="removeAddress" id="removeAddressId"></form>
+                        <?php if (is_array($productsData) && count($productsData) >= 1) { ?>
+                            <!-- Phones/tablets: total + Place order always in reach (like Flipkart) -->
+                            <div class="m-checkout-bar d-lg-none">
+                                <a href="#" class="m-checkout-total" onclick="document.querySelector('.grand-totall').scrollIntoView({behavior: 'smooth', block: 'center'}); return false;">
+                                    <b>Rs. <?php echo number_format($finalTotal + $shippingCharges, 2); ?></b>
+                                    <small>View price details</small>
+                                </a>
+                                <button type="button" class="m-checkout-btn" onclick="submitform()">Place order</button>
+                            </div>
+                        <?php } ?>
                     <!-- </div> -->
                 </div>
             </div>

@@ -72,7 +72,7 @@ function adminOrdersLink($tab, $search, $unpaid)
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Orders | Pet Shop Admin</title>
   <link rel="icon" href="../assets/images/favicon/favicon.png">
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">

@@ -8,6 +8,7 @@ An online pet store built with PHP and MySQL: customers browse food and essentia
 - Home page, product listing with categories and search, product page with photo zoom and related products
 - Cart with Flipkart-style delivery addresses: saved addresses, PIN code lookup that fills city/state, shows the areas in that PIN and an estimated delivery date
 - Online (PayPal sandbox) or cash / offline payment
+- Fully responsive: app-style bottom navigation, 2-column product grid, cart cards and a sticky "Place order" bar on phones; tuned for iPhone/iPad (notch-safe, no zoom on form fields), tablets and large screens
 - Light and dark mode on every page; product photos get their white background removed so they blend into both themes
 
 **Customer account**
@@ -34,7 +35,7 @@ PHP 8, MySQL / MariaDB, AdminLTE 3 + Bootstrap (admin), HTML template + Bootstra
    mysql -u root -e "CREATE DATABASE nsp_pet"
    mysql -u root nsp_pet < database/pet_shop.sql
    ```
-4. If your MySQL user or password isn't `root` with no password, edit `admin/db.php`.
+4. If your MySQL user or password isn't `root` with no password (or on a web host), copy `admin/db_config.example.php` to `admin/db_config.php` and fill in your database details.
 5. Copy `admin/recovery_config.example.php` to `admin/recovery_config.php` and set your own long random key (used to reset the admin password).
 6. Open `http://localhost/pet-shop/` in your browser.
 
